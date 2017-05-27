@@ -1,0 +1,27 @@
+<nav>
+	<div class="container">
+	  <p><h2>회원가입</h2><br></p>
+	</div>
+</nav>
+<header>
+  <center>
+    <div class="container">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+      
+        <div class="form-inputs" style="text-align:center; border :2px solid red;">
+          <%= f.input :email, autofocus: true,  placeholder:"아이디"%>
+          <%= f.input :password, placeholder:"비밀번호 ", hint: ("최소 #{@minimum_password_length}자 " if @minimum_password_length) %>
+          <%= f.input :password_confirmation, placeholder:"비밀번호 확인" %>
+        
+      
+          <div class="form-actions">
+            <button class="btn btn-outline-danger" type="submit">가입</button>
+          </div>
+        </div>
+      <% end %>
+      
+      <!--<%= render "devise/shared/links" %>-->
+    </div>
+  </center>
+</header>

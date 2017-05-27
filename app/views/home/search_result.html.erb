@@ -1,0 +1,97 @@
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/index">리뷰모아</a>
+
+<!--네브바-->
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/sign_in">sign_in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/sign_up">sign_up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/sign_out">sign_out</a>
+          </li>
+        </ul>
+        
+<!--검색버튼-->
+        <form class="form-inline my-2 my-lg-0" action="/crawling">
+          <input class="form-control mr-sm-2" type="text" placeholder="사고 싶은 옷을 검색하세요.">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">리뷰모아</h1>
+        <p>리뷰모아는 구매자 중심의 정보를 제공하는 쇼핑 서비스 플랫폼입니다. </p>
+      </div>
+    </div>
+
+<!--크롤링해온 정보들 배열-->
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+          
+        <div class="col-md-4">
+         
+          <p><% @cr5p_review.each do |item| %>
+                <p>
+                  <a href ="http://www.cr5p.com/board/board.html?code=wjsqh33_board2" style="text-decoration:none; hover:none;">
+                    <%= item %>
+                  </a>
+                </p>
+              <hr>
+            <% end %>
+          </p>
+         
+        </div>
+        
+        <div class="col-md-4">
+          
+          <p><% @styleberry_review.each do |item| %>
+                <p>
+                  <a href ="http://www.dailymonday.com/board/power_review_photo.html" style="text-decoration:none; hover:none;">
+                    <%= item %>
+                  </a>
+                </p>
+              <hr>
+             <% end %>
+          </p>
+          
+       </div>
+       
+        <div class="col-md-4">
+          
+          <p>다른 쇼핑몰 크롤링</p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 멋쟁이사자처럼 경기연합하프톤 리뷰모아팀</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
